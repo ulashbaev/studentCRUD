@@ -77,6 +77,6 @@ public class StudentRepo implements Repository<Student>{
 
     @Override
     public List<Student> read() {
-        return null;
+        return students;
     }
 }
