@@ -1,6 +1,7 @@
 package db;
 
 import entity.Student;
+import util.Input;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -54,12 +55,18 @@ public class StudentRepo implements Repository<Student>{
 
     @Override
     public void create(Student student) {
-
+        students.add(student);
+        uploadData();
     }
 
     @Override
     public void update(Student student) {
-
+        if(students!=null){
+            student.setName(Input.inputStr("Enter name : "));
+            student.setAge(Input.inputInt("Enter age : "));
+            student.setPhoneNumber(Input.inputStr("Enter phone number : "));
+        }
+        uploadData();
     }
 
     @Override
